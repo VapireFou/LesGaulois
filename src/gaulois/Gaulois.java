@@ -17,6 +17,11 @@ public class Gaulois {
 	}
 	
 	
+	public Village getVillage() {
+		return village;
+	}
+
+
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "\"" + texte + "\"");
 	}
@@ -48,7 +53,30 @@ public class Gaulois {
 	public void setVillage(Village village) {
 		this.village = village;
 	}
+	
+	public void sePresenter() {
+		if (this.getVillage() == null) {
+			System.out.println("Le Gaulois " + this.getNom() + ": Bonjour, je m'appelle " + this.getNom() + "." + "Je voyage de villages en villages. ");
+		}
+			
+		 else {
+			 Village village = this.getVillage();
+			 Gaulois chef = village.getChef();
+			 if (this.getNom() == chef.getNom()) {
+				System.out.println("Le Gaulois " + this.getNom() + ": Bonjour, je m'appelle " + this.getNom() + "." + "Je suis le chef du village " + '"' + village.getNom());
+			} else {
+				System.out.println("Le Gaulois " + this.getNom() + ": Bonjour, je m'appelle " + this.getNom() + ". " + "J'habite dans le village " + village.getNom());
+			}
+		 }
+
+		
+	}
+
 }
+
+
+		
+	
 
 
 
