@@ -20,4 +20,15 @@ public class Chaudron {
 		this.quantitePotion = quantitePotion;
 		this.forcePotion = forcePotion;
 	}
+	
+	public int prendreLouche() {
+		if (resterPotion()) {
+			quantitePotion -= 1;
+			return forcePotion;
+			
+		} else {
+			return 1;
+		}
+		
+	}
 }
